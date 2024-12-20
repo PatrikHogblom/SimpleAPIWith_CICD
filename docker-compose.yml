@@ -1,0 +1,6 @@
+services:
+  simpleapiwith_cicd:
+    image: ${DOCKER_REGISTRY-}simpleapiwithcicd
+    build:
+      context: .
+      dockerfile: SimpleAPIWith_CICD\Dockerfile

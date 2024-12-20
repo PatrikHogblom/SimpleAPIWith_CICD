@@ -17,17 +17,17 @@ namespace SimpleAPIWith_CICD
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoList"));
-            builder.WebHost.UseUrls("http://0.0.0.0:80"); // Ensure it matches the exposed port in Dockerfile
+            //builder.WebHost.UseUrls("http://0.0.0.0:80"); // Ensure it matches the exposed port in Dockerfile
 
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
+            //if (app.Environment.IsDevelopment())
+            //{
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            //}
 
             //Remove HTTPS redirection as it's not needed in Docker for now
             //app.UseHttpsRedirection();
