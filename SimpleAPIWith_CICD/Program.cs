@@ -30,7 +30,7 @@ namespace SimpleAPIWith_CICD
             //}
 
             //Remove HTTPS redirection as it's not needed in Docker for now
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseAuthorization();
             app.MapControllers();

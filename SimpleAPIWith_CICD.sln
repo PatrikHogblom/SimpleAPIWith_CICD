@@ -8,6 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C7B777D-E023-47E3-9F54-A2CF5455612F}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		deployment.yaml = deployment.yaml
+		Dockerfile = Dockerfile
+		README.md = README.md
+		service.yaml = service.yaml
 	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{87071428-29DE-41B2-B387-303D4272A503}"

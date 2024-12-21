@@ -1,0 +1,32 @@
+# The metadata section specifies the name of the deployment.
+# The spec.replicas field indicates the desired number of replicas (instances) of the API to be running.
+# The spec.selector field specifies the label selector for the deployment.
+# The spec.template section defines the configuration for the pods created by the deployment.
+# The spec.template.metadata.labels field sets the label for the pods.
+# The spec.template.spec.containers section specifies the container configuration.
+# The name field sets the name of the container.
+# The image field references the Docker image you built earlier (simpleapi-image).
+# The imagePullPolicy: Never ensures that Kubernetes does not attempt to pull the image from a remote registry.
+# The ports section specifies the container port to expose (in this case, port 8080).
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: simpleapi-deployment
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: simpleapi
+    template:
+        metadata: 
+            labels:
+                app: simpleapi
+        spec:
+            containers:
+                - name: simpleapi-container
+                  image: simpleapi-image
+                  imagePullPolicy: Never
+                  ports:
+                    - containerPort: 8080 

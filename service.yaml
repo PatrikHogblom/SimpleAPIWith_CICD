@@ -1,0 +1,18 @@
+# The metadata section sets the name of the service.
+# The spec.selector field matches the label specified in the deployment YAML.
+# The ports section specifies the port configuration for the service.
+# nodePort: You can expose your service on a static port on each worker node in the cluster.
+
+apiVersion: v1
+kind: Service
+metadata: 
+    name: simpleapi-service
+spec:
+    selector:
+        app: simpleapi
+    ports:
+        - protocol: TCP
+          port: 8080
+          targetPort: 8080
+          nodePort: 30080 # Specify a static port for NodePort
+    type: NodePort # Change the service type to NodePort
