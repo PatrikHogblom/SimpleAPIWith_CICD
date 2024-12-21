@@ -22,7 +22,7 @@ docker build -t simpleapi-image .
 ### run the docker container
 docker run -d -p 8080:8080 --name simpleapi-container simpleapi-image
 
-The app will be accessible at http://localhost:8080.
+The app will be accessible at http://localhost:8080/swagger.
 
 # Kubernetes
 ## Key Concepts
@@ -65,7 +65,7 @@ to access the api externally, you can retrieve the external ip adress of service
 minikube kubectl -- get services 
 
 Look for the port number in the PORT(S) column associated with your simpleapi-service. 
-Access your API using the IP address of any worker node in your cluster and the NodePort. For example: http://<worker-node-ip>:<node-port>/swagger
+Access your API using the IP address of any worker node in your cluster and the NodePort. For example: http://worker-node-ip:node-port/swagger
 
 worker-node-ip you get it by: minikube ip
 
